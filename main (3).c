@@ -1,35 +1,44 @@
-#include<stdio.h>
-void main(){
-   int i,j,a,n,counter,ave,number[30];
-   printf ("Enter the value of N");
-   scanf ("%d", &n);
-   printf ("Enter the numbers");
-   for (i=0; i<n; ++i)
-      scanf ("%d",&number[i]);
-   for (i=0; i<n; ++i){
-      for (j=i+1; j<n; ++j){
-         if (number[i] < number[j]){
-            a = number[i];
-            number[i] = number[j];
-            number[j] = a;
-         }
+# include <stdio.h>
+# include <conio.h>
+struct  bank
+{
+int acc_no ;
+char name[20] ;
+int bal ;
+} b[3] ;
+
+void  check( struct bank b[], int n )
+{
+int i ;
+printf("\n Customer Details whose Balance < 100 Rs. \n") ;
+printf(" ----------------------------------------------\n") ;
+for( i = 0 ; i < n ; i++ )
+{
+      if( b[i].bal < 100 )
+      {
+            printf(" Account Number : %d\n",b[i].acc_no ) ;
+            printf(" Name : %s\n",b[i].name ) ;
+            printf(" Balance : %d\n",b[i].bal ) ;
+            printf(" ------------------------------\n") ;
       }
-   }
-   printf ("The numbers arranged in descending order are given below");
-   for (i=0; i<n; ++i)
-      printf ("%10d",number[i]);
-   printf ("The 2nd largest number is = %d", number[1]);
-   printf ("The 2nd smallest number is = %d", number[n-2]);
+}
+}
 
-   ave = (number[1] +number[n-2])/2;
-   counter = 0;
-   for (i=0; i<n; ++i){
-      if (ave==number[i])
-         ++counter;
-   }
-   if (counter==0)
-      printf("The average of 2nd largest & 2nd smallest is not in the array");
-   else
-      printf("The average of 2nd largest & 2nd smallest in array is %d in numbers", counter);
-
+int  main( )
+{
+int i ;
+for( i = 0 ; i < 3 ; i++ )
+{
+      printf(" Enter Details of Customer %d\n", i+1 ) ;
+      printf(" ------------------------------\n") ;
+      printf(" Enter Account Number : ") ;
+      scanf("%d",&b[i].acc_no) ;
+      printf(" Enter Name : ") ;
+      scanf("%s",b[i].name) ;
+      printf(" Enter Balance : ") ;
+      scanf("%d",&b[i].bal) ;
+      printf(" ------------------------------\n") ;
+}
+check( b, 3 ) ;
+return 0 ;
 }

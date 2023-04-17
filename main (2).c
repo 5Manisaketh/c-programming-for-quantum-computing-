@@ -1,19 +1,32 @@
 #include <stdio.h>
-int main()
-{
-    int n,i,m=0,flag=0;
-    printf("enter the number to check prime number:");
-    scanf("%d",&n);
-    m=n/2;
-    for(i=2;i<=m;i++)
-    {
-    if(n%i==0);
-    {
-    printf("number is not a prime :");
-    if (flag=1);
-     break ;
+struct student {
+    char firstName[50];
+    int roll;
+    float marks;
+} s[5];
+
+int main() {
+    int i;
+    printf("Enter information of students:\n");
+
+    // storing information
+    for (i = 0; i < 5; ++i) {
+        s[i].roll = i + 1;
+        printf("\nFor roll number%d,\n", s[i].roll);
+        printf("Enter first name: ");
+        scanf("%s", s[i].firstName);
+        printf("Enter marks: ");
+        scanf("%f", &s[i].marks);
     }
+    printf("Displaying Information:\n\n");
+
+    // displaying information
+    for (i = 0; i < 5; ++i) {
+        printf("\nRoll number: %d\n", i + 1);
+        printf("First name: ");
+        puts(s[i].firstName);
+        printf("Marks: %.1f", s[i].marks);
+        printf("\n");
     }
-    printf("number is prime");
     return 0;
 }

@@ -1,48 +1,21 @@
 #include <stdio.h>
 
-void main()
- {
-    int arr1[10], arr2[10], arr3[10];
-    int i,j=0,k=0,n;
-	
-	
-       printf("\n\nSeparate odd and even integers in separate arrays:\n");
-       printf("------------------------------------------------------\n");	
+union union_data {
+  int int_val;
+  float float_val;
+};
 
-       printf("Input the number of elements to be stored in the array :");
-       scanf("%d",&n);
-   
-       printf("Input %d elements in the array :\n",n);
-       for(i=0;i<n;i++)
-            {
-	      printf("element - %d : ",i);
-	      scanf("%d",&arr1[i]);
-	    }
+int main() {
+  union union_data data;
 
-    for(i=0;i<n;i++)
-    {
-	if (arr1[i]%2 == 0)
-	{
-	   arr2[j] = arr1[i];
-	   j++;
-	}
-	else
-	{
-	   arr3[k] = arr1[i];
-	   k++;
-	}
-    }
+  printf("Enter a value (integer or float): ");
+  if (scanf("%d", &data.int_val) == 1) {
+    printf("You entered an integer: %d\n", data.int_val);
+  } else if (scanf("%f", &data.float_val) == 1) {
+    printf("You entered a float: %.2f\n", data.float_val);
+  } else {
+    printf("Invalid input\n");
+  }
 
-    printf("\nThe Even elements are : \n");
-    for(i=0;i<j;i++)
-    {
-	printf("%d ",arr2[i]);
-    }
-
-    printf("\nThe Odd elements are :\n");
-    for(i=0;i<k;i++)
-    {
-	printf("%d ", arr3[i]);
-    }
-    printf("\n\n");	
- }
+  return 0;
+}

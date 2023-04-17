@@ -1,25 +1,35 @@
-# include <stdio.h>
-  int main()
- {
-     int a[25][25],b[25][25],c[25][25],i,j,m,n;
-     printf("/n enter the number of rows and columns in two matrices");
-     scanf("%d %d",&m,&n);
-     printf("/n enter the elements in A matrices");
-     for (i=0;i<m;i++)
-     for (j=0;j<n;j++)
-     scanf("%d",a[i][j]);
-     printf("/n enter the elements in B matrices");
-     for (i=0;i<m;i++)
-     for (j=0;j<n;j++)
-     scanf("%d",b[i][j]);
-     for (i=0;j<m;i++)
-     for (j=0;j<n;j++)
-     c[i][j]=a[i][j]+b[i][j];
-     printf("/n addition of numbers in two matrices");
-     for (i=0;j<n;i++)
-     {
-         printf("/n");
-     for (j=0;j<n;j++)
-     printf("/t%d",c[i][j]);
-     }
- }
+#include <stdio.h>
+
+#define MAX_PLAYERS 11
+
+struct player {
+    char name[20];
+    int runs_scored;
+};
+
+int main() {
+    struct player players[MAX_PLAYERS];
+    int num_players, i, total_runs = 0;
+    
+    printf("Enter the number of players in the team (max 11): ");
+    scanf("%d", &num_players);
+    
+    if (num_players > MAX_PLAYERS) {
+        printf("Error: Too many players!\n");
+        return 1;
+    }
+    
+    for (i = 0; i < num_players; i++) {
+        printf("Enter name of player %d: ", i+1);
+        scanf("%s", players[i].name);
+        
+        printf("Enter runs scored by player %d: ", i+1);
+        scanf("%d", &players[i].runs_scored);
+        
+        total_runs += players[i].runs_scored;
+    }
+    
+    printf("\nTotal runs scored by the team: %d\n", total_runs);
+    
+    return 0;
+}

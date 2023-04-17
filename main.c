@@ -1,25 +1,23 @@
-# include <stdio.h>
-  int main()
- {
-     int a[25][25],b[25][25],c[25][25],i,j,m,n;
-     printf("/n enter the number of rows and columns in two matrices");
-     scanf("%d %d",&m,&n);
-     printf("/n enter the elements in A matrices");
-     for (i=0;i<m;i++)
-     for (j=0;j<n;j++)
-     scanf("%d",a[i][j]);
-     printf("/n enter the elements in B matrices");
-     for (i=0;i<m;i++)
-     for (j=0;j<n;j++)
-     scanf("%d",b[i][j]);
-     for (i=0;j<m;i++)
-     for (j=0;j<n;j++)
-     c[i][j]=a[i][j]+b[i][j];
-     printf("/n addition of numbers in two matrices");
-     for (i=0;j<n;i++)
-     {
-         printf("/n");
-     for (j=0;j<n;j++)
-     printf("/t%d",c[i][j]);
-     }
- }
+#include <stdio.h>
+struct employee
+{
+    int idno,age;
+    float salary;
+    char name [10],design[20];
+ }emp;
+ main()
+{
+printf("enter the details of employee/n");
+printf("enter the name:");
+scanf("%s",&emp.name);
+printf("enter the designation:");
+scanf("%s",&emp.design);
+printf("enter the salary:");
+scanf("%s",&emp.salary);
+printf("enter the age:");
+scanf("%s",&emp.age);
+printf("enter the idno:");
+scanf("%s",&emp.idno );
+printf("enter the employee details");
+printf("\t%s\t%s\t%d\t%d\t%0.2f",emp.name,emp.salary,emp.age,emp.idno,emp.design);
+}
