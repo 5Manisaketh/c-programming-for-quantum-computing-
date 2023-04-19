@@ -1,23 +1,16 @@
 #include <stdio.h>
-struct employee
+#include <string.h>
+int main()
 {
-    int idno,age;
-    float salary;
-    char name [10],design[20];
- }emp;
- main()
-{
-printf("enter the details of employee/n");
-printf("enter the name:");
-scanf("%s",&emp.name);
-printf("enter the designation:");
-scanf("%s",&emp.design);
-printf("enter the salary:");
-scanf("%s",&emp.salary);
-printf("enter the age:");
-scanf("%s",&emp.age);
-printf("enter the idno:");
-scanf("%s",&emp.idno );
-printf("enter the employee details");
-printf("\t%s\t%s\t%d\t%d\t%0.2f",emp.name,emp.salary,emp.age,emp.idno,emp.design);
+    char str1[20]="hello";
+      char   str2[20]="world";
+        char str3[20];
+         int len;
+         strcpy(str3,str1);
+         printf("copied string=%s/n",str3);
+         strcat(str1,str2);
+         printf("concentrated string is=%s/n",str1);
+         len=strlen(str1);
+         printf("copied string =%d/n",len);
+         return 0;
 }
